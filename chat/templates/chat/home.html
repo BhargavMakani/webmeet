@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Meet</title>
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}">
+
+    <script src="https://kit.fontawesome.com/773fabd191.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/welcome-login.css' %}">
+
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <div class="logo-name">
+            <img src="{% static 'img/logo.png' %}">
+            <p>Web Meet</p>
+        </div>
+
+        <div class="welcome-container">
+
+        </div>
+        <div class="login-container">
+
+            <div class="login_container">
+                <h1>Log In</h1>
+                <form action="/login" method="post">
+                  {% csrf_token %}
+                    <div class="box">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="uname" id="uname"  placeholder="Username">
+                    </div>
+
+                    <div class="box">
+                        <i class="fas fa-key"></i>
+                        <input type="password" name="password" id="password"   placeholder="Password">
+                    </div>
+                    <button class="logbtn">Sign In</button>
+                </form>
+
+                <p>if you don't have account so please 
+                <button type="button" id="signupbtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Sign Up
+                </button></p>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Sign Up</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <form method="post" action="/signup">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <!-- <label for="exampleInputFname">First name</label> -->
+                                        <input type="text" class="form-control" id="exampleInputFname" name="fname"
+                                            placeholder="First Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <label for="exampleInputLname">Last name</label> -->
+                                        <input type="text" class="form-control" id="exampleInputLname" name="lname"
+                                            placeholder="Last Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <label for="exampleInputUname">Username</label> -->
+                                        <input type="text" class="form-control" id="exampleInputUname" name="uname"
+                                            placeholder="User Name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <!-- <label for="exampleInputEmail1">Email address</label> -->
+                                        <input type="email" class="form-control" id="exampleInputEmail1" name="email"
+                                            aria-describedby="emailHelp" placeholder="Email">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <!-- <label for="exampleInputPassword1">Password</label> -->
+                                        <input type="password" class="form-control" id="exampleInputPassword1"
+                                            name="pwd" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <label for="exampleInputPassword2">Confirm Password</label> -->
+                                        <input type="password" class="form-control" id="exampleInputPassword2"
+                                            name="cpwd" placeholder="Confirm Password">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary" id="btn-join">Sign Up</button>
+                                </form>
+                            </div>
+                            <!-- <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Optional JavaScript -->
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                    crossorigin="anonymous"></script>
+                <!-- <a href="/login/newAccount">SignUp</a></p> -->
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+  

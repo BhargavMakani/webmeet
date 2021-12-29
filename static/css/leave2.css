@@ -1,0 +1,32 @@
+.box{
+    background-color: white;
+    /* border: 2px solid; */
+    width: 28%;
+    height: 58px;
+    margin-top: 134px;
+    font-size: 37px;
+    margin-left: 545px;
+}
+.rejoin{
+    color: #0b4bff;
+    margin-top: 20px;
+    margin-left: 560px;
+    width: 91px;
+    height: 38px;
+    border-radius: 6px;
+    font-size: 16px;
+    background: white;
+    border-color: #a1a1a1;
+    cursor: pointer;
+}
+.homescreen{
+    color: white;
+    margin-left: 5px;
+    width: 185px;
+    height: 38px;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #0b4bff;
+    border-color: #0b4bff;
+    cursor: pointer;
+}
