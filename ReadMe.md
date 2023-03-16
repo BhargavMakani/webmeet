@@ -1,4 +1,4 @@
-# webmeet
+# Webmeet
 
 ## Introduction
 Real-Time meeting web application with live video interface, multiple client access, and chatting feature. It's
